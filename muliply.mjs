@@ -4,4 +4,4 @@ const getNumbers = () => {
 }
 
 
-module.exports.getNumbers = getNumbers;
+export default getNumbers

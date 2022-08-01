@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-
+import getNumbers from './muliply.mjs'
 
 const menu = () => {
     inquirer
@@ -15,9 +15,11 @@ const menu = () => {
     ])
     .then((select) => {
         if(select.selection === "Muliply") {
-            console.log(`selection was ${select.selection}`)
+            console.log('working')
+            getNumbers()
         }
     })
 }
 
 menu()
+export default menu
