@@ -1,0 +1,22 @@
+{
+  "name": "fraction_calculator_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoJo-designs/fraction_Calculator_Node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoJo-designs/fraction_Calculator_Node/issues"
+  },
+  "homepage": "https://github.com/JoJo-designs/fraction_Calculator_Node#readme",
+  "dependencies": {
+    "inquirer": "^9.0.2"
+  }
+}
