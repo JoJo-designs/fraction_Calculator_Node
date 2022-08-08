@@ -31,13 +31,30 @@ const getNumbers = () => {
         },
     ])
     .then((inputs) => {
-        topFractionOne = inputs.fractionOneTop
-        bottomFractionOne = inputs.fractionOneBottom
-        topFractionTwo = inputs.fractionTwoTop
-        bottomFractionTwo = inputs.fractionTwoBottom
+        topFractionOne = parseInt(inputs.fractionOneTop)
+        bottomFractionOne = parseInt(inputs.fractionOneBottom)
+        topFractionTwo = parseInt(inputs.fractionTwoTop)
+        bottomFractionTwo = parseInt(inputs.fractionTwoBottom)
         console.log(`${topFractionOne}/${bottomFractionOne} ${topFractionTwo}/${bottomFractionTwo}`)
+        multiplying()
     })
 }
 
+const multiplying = () => {
+   let newNumerators = topFractionOne * topFractionTwo;
+   let newDenominators = bottomFractionOne * bottomFractionTwo; 
+   simple(newNumerators, newDenominators)
+}
+
+
+const simple = (newNumerators, newDenominators) => {
+    console.log( newNumerators, '/', newDenominators )
+    let evenNumerator = newNumerators % 2
+    let evenDenominator = newDenominators % 2 
+    console.log(evenNumerator, evenDenominator)
+    if (evenNumerator === 0 && evenDenominator === 0) {
+        console.log("Both numbers a even.")
+    }
+}
 
 export default getNumbers
