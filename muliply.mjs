@@ -47,23 +47,42 @@ const multiplying = () => {
 }
 
 
+// const simple = (newNumerators, newDenominators) => {
+//     console.log( newNumerators, '/', newDenominators )
+//     let evenNumerator = newNumerators % 2
+//     let evenDenominator = newDenominators % 2 
+//     console.log(evenNumerator, evenDenominator)
+//     if (evenNumerator === 0 && evenDenominator === 0) {
+//         let simpleNum = newNumerators / 2
+//         let simpleDem = newDenominators / 2
+//         console.log(simpleNum, simpleDem)
+//         let evenNum = simpleNum % 2
+//         let evenDem = simpleDem % 2
+//         if (evenNum === 0 && evenDem === 0 ) {
+//             let smallNum = simpleNum / 2
+//             let smallDem = simpleDem / 2
+//             console.log(smallNum, smallDem)
+//         }
+//     }
+// }
+
 const simple = (newNumerators, newDenominators) => {
-    console.log( newNumerators, '/', newDenominators )
-    let evenNumerator = newNumerators % 2
-    let evenDenominator = newDenominators % 2 
-    console.log(evenNumerator, evenDenominator)
-    if (evenNumerator === 0 && evenDenominator === 0) {
-        let simpleNum = newNumerators / 2
-        let simpleDem = newDenominators / 2
-        console.log(simpleNum, simpleDem)
-        let evenNum = simpleNum % 2
-        let evenDem = simpleDem % 2
-        if (evenNum === 0 && evenDem === 0 ) {
-            let smallNum = simpleNum / 2
-            let smallDem = simpleDem / 2
-            console.log(smallNum, smallDem)
-        }
+    let num = newNumerators
+    let dem = newDenominators
+    let evenNum = num % 2
+        let evenDem = dem % 2
+    console.log( num, '/', dem )
+    do {
+            if ( evenNum === 0 && evenDem === 0 ) {
+                num = num / 2
+                dem = dem / 2
+                console.log(num, dem)
+            }
     }
+    while (evenNum === 0 && evenDem === 0)
+    console.log(num, dem)
 }
+
+
 
 export default getNumbers
