@@ -53,7 +53,16 @@ const simple = (newNumerators, newDenominators) => {
     let evenDenominator = newDenominators % 2 
     console.log(evenNumerator, evenDenominator)
     if (evenNumerator === 0 && evenDenominator === 0) {
-        console.log("Both numbers a even.")
+        let simpleNum = newNumerators / 2
+        let simpleDem = newDenominators / 2
+        console.log(simpleNum, simpleDem)
+        let evenNum = simpleNum % 2
+        let evenDem = simpleDem % 2
+        if (evenNum === 0 && evenDem === 0 ) {
+            let smallNum = simpleNum / 2
+            let smallDem = simpleDem / 2
+            console.log(smallNum, smallDem)
+        }
     }
 }
 
