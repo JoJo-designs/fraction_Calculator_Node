@@ -41,12 +41,24 @@ const getNumbers = () => {
 }
 
 const multiplying = () => {
-   let newNumerators = topFractionOne * topFractionTwo;
-   let newDenominators = bottomFractionOne * bottomFractionTwo; 
-   simple(newNumerators, newDenominators)
+   let N = topFractionOne * topFractionTwo;
+   let D = bottomFractionOne * bottomFractionTwo; 
+   console.log(`${N}/${D}`)
+   simple(N, D)
 }
 
+const simple = (N, D) => {
+    if (D === 0) {
+        return N;
+    }
 
+    console.log(N, D)
+    return simple(D, N % D);
+};
+
+
+
+//Long Functions need to be simplified
 // const simple = (newNumerators, newDenominators) => {
 //     console.log( newNumerators, '/', newDenominators )
 //     let evenNumerator = newNumerators % 2
@@ -66,22 +78,22 @@ const multiplying = () => {
 //     }
 // }
 
-const simple = (newNumerators, newDenominators) => {
-    let num = newNumerators
-    let dem = newDenominators
-    let evenNum = num % 2
-        let evenDem = dem % 2
-    console.log( num, '/', dem )
-    do {
-            if ( evenNum === 0 && evenDem === 0 ) {
-                num = num / 2
-                dem = dem / 2
-                console.log(num, dem)
-            }
-    }
-    while (evenNum === 0 && evenDem === 0)
-    console.log(num, dem)
-}
+// const simple = (newNumerators, newDenominators) => {
+//     let num = newNumerators
+//     let dem = newDenominators
+//     let evenNum = num % 2
+//         let evenDem = dem % 2
+//     console.log( num, '/', dem )
+//     do {
+//             if ( evenNum === 0 && evenDem === 0 ) {
+//                 num = num / 2
+//                 dem = dem / 2
+//                 console.log(num, dem)
+//             }
+//     }
+//     while (evenNum === 0 && evenDem === 0)
+//     console.log(num, dem)
+// }
 
 
 
