@@ -5,6 +5,9 @@ let bottomFractionOne
 let topFractionTwo
 let bottomFractionTwo
 
+let num 
+let deno
+
 const getNumbers = () => {
     console.log("page loads")
     inquirer
@@ -43,58 +46,32 @@ const getNumbers = () => {
 const multiplying = () => {
    let N = topFractionOne * topFractionTwo;
    let D = bottomFractionOne * bottomFractionTwo; 
+    num = N
+    deno = D
    console.log(`${N}/${D}`)
-   simple(N, D)
+   simple(N,D)
 }
 
 const simple = (N, D) => {
     if (D === 0) {
-        return N;
+        console.log(N, D)
+        return solution(N);
     }
 
-    console.log(N, D)
     return simple(D, N % D);
 };
 
 
-
-//Long Functions need to be simplified
-// const simple = (newNumerators, newDenominators) => {
-//     console.log( newNumerators, '/', newDenominators )
-//     let evenNumerator = newNumerators % 2
-//     let evenDenominator = newDenominators % 2 
-//     console.log(evenNumerator, evenDenominator)
-//     if (evenNumerator === 0 && evenDenominator === 0) {
-//         let simpleNum = newNumerators / 2
-//         let simpleDem = newDenominators / 2
-//         console.log(simpleNum, simpleDem)
-//         let evenNum = simpleNum % 2
-//         let evenDem = simpleDem % 2
-//         if (evenNum === 0 && evenDem === 0 ) {
-//             let smallNum = simpleNum / 2
-//             let smallDem = simpleDem / 2
-//             console.log(smallNum, smallDem)
-//         }
-//     }
-// }
-
-// const simple = (newNumerators, newDenominators) => {
-//     let num = newNumerators
-//     let dem = newDenominators
-//     let evenNum = num % 2
-//         let evenDem = dem % 2
-//     console.log( num, '/', dem )
-//     do {
-//             if ( evenNum === 0 && evenDem === 0 ) {
-//                 num = num / 2
-//                 dem = dem / 2
-//                 console.log(num, dem)
-//             }
-//     }
-//     while (evenNum === 0 && evenDem === 0)
-//     console.log(num, dem)
-// }
-
+const solution = (N) => {
+    console.log(N, num, deno)
+    if ( N === 1 ) {
+       console.log(`Fraction cannot be reduced ${num}/${deno}`) 
+    } else {
+        let sn =  num / N
+        let sd =  deno / N
+        console.log(`${sn}/${sd}`)
+    } 
+} 
 
 
 export default getNumbers
