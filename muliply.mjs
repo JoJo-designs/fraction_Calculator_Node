@@ -60,18 +60,37 @@ const simple = (N, D) => {
 
     return simple(D, N % D);
 };
-
+// 4253
 
 const solution = (N) => {
+    let sn
+    let sd 
     console.log(N, num, deno)
     if ( N === 1 ) {
        console.log(`Fraction cannot be reduced ${num}/${deno}`) 
+       sn = num
+       sd = deno
     } else {
-        let sn =  num / N
-        let sd =  deno / N
+        sn =  num / N
+        sd =  deno / N
         console.log(`${sn}/${sd}`)
     } 
+    wholeNum(sn, sd)
 } 
+
+const wholeNum = (sn, sd) => {
+    if (sn > sd) {
+        console.log(`${sn} is bigger then ${sd}`)
+        let wholeN = sd%sn
+        let value = sd*sd
+        let remainder = sn-value
+        console.log(wholeN, remainder)
+        console.log(`${wholeN} ${remainder}/${sd}`)
+
+    } else {
+        console.log(`${sn}/${sd}`)
+    }
+}
 
 
 export default getNumbers
