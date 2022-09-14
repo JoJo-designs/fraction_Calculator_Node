@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import getNumbers from './muliply.mjs'
+import getNumbers from './multiply.mjs'
 
 const menu = () => {
     inquirer
