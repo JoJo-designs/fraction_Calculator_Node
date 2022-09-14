@@ -8,6 +8,7 @@ let bottomFractionTwo
 let num 
 let deno
 
+// collects data from user
 const getNumbers = () => {
     console.log("page loads")
     inquirer
@@ -43,6 +44,7 @@ const getNumbers = () => {
     })
 }
 
+// Take user input and multiply the numbers
 const multiplying = () => {
    let N = topFractionOne * topFractionTwo;
    let D = bottomFractionOne * bottomFractionTwo; 
@@ -52,6 +54,7 @@ const multiplying = () => {
    simple(N,D)
 }
 
+// function that can find the lowest common denominator
 const simple = (N, D) => {
     if (D === 0) {
         console.log(N, D)
@@ -62,6 +65,7 @@ const simple = (N, D) => {
 };
 // 4253
 
+// Use the lowest common denominator to simplify the fraction
 const solution = (N) => {
     let sn
     let sd 
@@ -78,6 +82,7 @@ const solution = (N) => {
     wholeNum(sn, sd)
 } 
 
+// If the numerator is larger then denominator means there is a whole number at the start of a fraction
 const wholeNum = (sn, sd) => {
     if (sn > sd) {
         console.log(`${sn} is bigger then ${sd}`)
