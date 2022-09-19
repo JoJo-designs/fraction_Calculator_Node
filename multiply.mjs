@@ -61,16 +61,53 @@ const Multiply = () => {
     solution.num = N;
     solution.demo = D;
     console.log(`${N}/${D}`)
-    simple()
+    simple(N,D)
 }
 
-const simple = (N, D) => {
+// Finds lowest common denominator
+const simple = (N,D) => {
     if (D === 0) {
-        console.log(N, D)
-        return solution(N);
+        return answer(N);
     }
 
     return simple(D, N % D);
 };
 
+//Use lowers common denominator to simplify the fraction
+const answer = (N) => {
+    let sn
+    let sd
+    if (N === 1) {
+        console.log(`Fraction cannot be reduced ${solution.num}/${solution.demo}`) 
+        sn = solution.num
+        sd = solution.demo
+    } else {
+        sn =  solution.num / N
+        sd =  solution.demo / N
+        console.log(`${sn}/${sd}`)
+    }
+    wholeNum(sn, sd)
+}
+
+//if Numerator is bigger then the denominator simplify to a whole number
+const wholeNum = (sn, sd) => {
+    if (sn > sd) {
+        console.log(`${sn} is bigger then ${sd}`)
+        let wholeN = sd%sn
+        let value = sd*sd
+        let remainder = sn-value
+        console.log(`${wholeN} ${remainder}/${sd}`)
+
+    } else {
+        console.log(`${sn}/${sd}`)
+    }
+}
+
+
+
+
 export default getNumbers
+
+// 1/2 3/4 = 3/8 not reduced
+// 4/2 5/3 = 10/3 reduced to 3 1/3
+// 2/4 6/8 = 12/32 reduced to 3/8

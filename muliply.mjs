@@ -8,6 +8,8 @@ let bottomFractionTwo
 let num 
 let deno
 
+// I Want to Redo and make more consistent names for variables 
+
 // collects data from user
 const getNumbers = () => {
     console.log("page loads")
