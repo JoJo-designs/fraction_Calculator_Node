@@ -9,12 +9,12 @@ const menu = () => {
             name: 'selection',
             message: 'Select actions',
             choices: [
-                "Muliply",
+                "Multiply",
             ]
         }
     ])
     .then((select) => {
-        if(select.selection === "Muliply") {
+        if(select.selection === "Multiply") {
             console.log('working')
             getNumbers()
         }

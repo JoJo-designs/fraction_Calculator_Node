@@ -66,6 +66,7 @@ const Multiply = () => {
 
 // Finds lowest common denominator
 const simple = (N,D) => {
+    console.log(N, D)
     if (D === 0) {
         return answer(N);
     }
@@ -74,7 +75,8 @@ const simple = (N,D) => {
 };
 
 //Use lowers common denominator to simplify the fraction
-const answer = (N) => {
+const answer = (N) => 
+{console.log(N)
     let sn
     let sd
     if (N === 1) {
