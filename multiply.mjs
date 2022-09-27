@@ -66,7 +66,6 @@ const Multiply = () => {
 
 // Finds lowest common denominator
 const simple = (N,D) => {
-    console.log(N, D)
     if (D === 0) {
         return answer(N);
     }
@@ -102,9 +101,16 @@ const wholeNum = (sn, sd) => {
 
     } else {
         console.log(`${sn}/${sd}`)
+        decimal(sn, sd)
     }
 }
 
+// get the decimal equivalent of the fractions
+const decimal = (sn, sd) => {
+    console.log(`this is the fraction ${sn}/${sd}`)
+    const newValue = sn / sd 
+    console.log(newValue)
+}
 
 
 
@@ -112,4 +118,4 @@ export default getNumbers
 
 // 1/2 3/4 = 3/8 not reduced
 // 4/2 5/3 = 10/3 reduced to 3 1/3
-// 2/4 6/8 = 12/32 reduced to 3/8
+// 2/4 6/8 = 12/32 reduced to 3/8 to fraction 0.375
