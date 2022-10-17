@@ -116,6 +116,6 @@ const decimal = (sn, sd) => {
 
 export default getNumbers
 
-// 1/2 3/4 = 3/8 not reduced
-// 4/2 5/3 = 10/3 reduced to 3 1/3
-// 2/4 6/8 = 12/32 reduced to 3/8 to fraction 0.375
+// 1/2 3/4 = 3/8 not reduced = 0.375
+// 4/2 5/3 = 10/3 reduced to 3 1/3 = will not be turned into a decimal
+// 2/4 6/8 = 12/32 reduced to 3/8 to fraction = 0.375
