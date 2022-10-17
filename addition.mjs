@@ -50,7 +50,29 @@ const getAddition = () => {
         fractionTwo.num = parseInt(inputs.numTwo);
         fractionTwo.demo = parseInt(inputs.demoTwo);
         console.log(fractionOne, fractionTwo);
+        checkNumbers()
     })
 }
 
+// Will check to see it the bottom numbers are the same.
+// if bottom numbers match then starts addition
+// if not will need to do more math
+const checkNumbers = () => {
+    if (fractionOne.demo === fractionTwo.demo ) {
+        console.log("the bottom numbers match.");
+        addNumbers()
+    } else {
+        console.log("the bottom numbers do not match."); 
+    }
+}
+
+// Adds the Numerators together.
+const addNumbers = () => {
+    solution.num = fractionOne.num + fractionTwo.num
+    solution.demo = fractionOne.demo
+    console.log(solution)
+}
+
 export default getAddition
+
+// 1/3 1/3 = 2/3 
