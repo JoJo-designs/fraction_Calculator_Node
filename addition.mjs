@@ -63,16 +63,78 @@ const checkNumbers = () => {
         addNumbers()
     } else {
         console.log("the bottom numbers do not match."); 
+        normalize()
     }
 }
 
+// if denominators don't match multiply top and bottom of each fraction by 
+// others denominator.
+const normalize = () => {
+    console.log("normalizing start")
+    const demoOne = fractionOne.demo
+    const demoTwo = fractionTwo.demo
+    fractionOne.num = demoTwo * fractionOne.num
+    fractionOne.demo = demoTwo * fractionOne.demo
+    fractionTwo.num = demoOne * fractionTwo.num
+    fractionTwo.demo = demoOne * fractionTwo.demo
+    console.log(fractionOne, fractionTwo)
+    addNumbers()
+}
+
+
 // Adds the Numerators together.
 const addNumbers = () => {
-    solution.num = fractionOne.num + fractionTwo.num
-    solution.demo = fractionOne.demo
-    console.log(solution)
+    let N = fractionOne.num + fractionTwo.num
+    let D = fractionOne.demo
+    solution.num = N;
+    solution.demo = D;
+    console.log(`${N}/${D}`)
+    simple(N,D)
+}
+
+// get the lowest common denominator
+const simple = (N,D) => {
+    if (D === 0) {
+        return answer(N);
+    }
+
+    return simple(D, N % D);
+};
+
+// takes lowest common denominators and sets them as a solution
+const answer = (N) => 
+{console.log(N)
+    let sn
+    let sd
+    if (N === 1) {
+        console.log(`Fraction cannot be reduced ${solution.num}/${solution.demo}`) 
+        sn = solution.num
+        sd = solution.demo
+    } else {
+        sn =  solution.num / N
+        sd =  solution.demo / N
+        console.log(`this is the numbers ${sn}/${sd}`)
+    }
+    wholeNum(sn, sd)
+}
+
+
+// should find whole number of the fraction with numerators that are bigger then denominators
+const wholeNum = (sn, sd) => {
+    if (sn > sd) {
+        console.log(`${sn} is bigger then ${sd}`)
+        let wholeN = sd%sn 
+        let value = sd*sd
+        let remainder = sn-value
+        console.log(sd, sn, sd%sn, wholeN, remainder, value)
+        console.log(`${wholeN} ${remainder}/${sd}`)
+
+    } else {
+        console.log(`${sn}/${sd}`)
+    }
 }
 
 export default getAddition
 
 // 1/3 1/3 = 2/3 
+// 1/2 3/4 = 4/8 6/8 = 10/8

@@ -105,7 +105,7 @@ const wholeNum = (sn, sd) => {
     }
 }
 
-// get the decimal equivalent of the fractions
+// get the decimal equivalent of the fractions if it is not a whole number.
 const decimal = (sn, sd) => {
     console.log(`this is the fraction ${sn}/${sd}`)
     const newValue = sn / sd 
