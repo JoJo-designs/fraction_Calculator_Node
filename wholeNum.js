@@ -1,8 +1,8 @@
 // whole number function only works in muiltpication file
 // this file is a test to see if I can make a function that works
 
-let sn = 10
-let sd = 8
+let sn = 16
+let sd = 4
 let wholeN = 0
 
 const wholeNum = () => {
@@ -13,12 +13,10 @@ const wholeNum = () => {
     wholeN = wholeN + 1
     wholeNum()
    }
-   yah()
+   console.log(`the answer is ${wholeN} ${sn}/${sd}`)
+   return
 }  
 
-const yah = () => {
-    console.log(`the answer is ${wholeN} ${sn}/${sd}`)
-}
 
 wholeNum();
 

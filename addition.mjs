@@ -17,6 +17,8 @@ let solution = {
     demo: 0
 }
 
+let wholeN = 0
+
 // collects a users inputs 
 
 const getAddition = () => {
@@ -108,30 +110,27 @@ const answer = (N) =>
     let sd
     if (N === 1) {
         console.log(`Fraction cannot be reduced ${solution.num}/${solution.demo}`) 
-        sn = solution.num
-        sd = solution.demo
     } else {
-        sn =  solution.num / N
-        sd =  solution.demo / N
-        console.log(`this is the numbers ${sn}/${sd}`)
+        solution.num =  solution.num / N
+        solution.demo =  solution.demo / N
     }
-    wholeNum(sn, sd)
+    wholeNum()
 }
 
 
 // should find whole number of the fraction with numerators that are bigger then denominators
-const wholeNum = (sn, sd) => {
+const wholeNum = () => {
+    console.log(solution.num, solution.demo)
+    let sn = solution.num
+    let sd = solution.demo
     if (sn > sd) {
-        console.log(`${sn} is bigger then ${sd}`)
-        let wholeN = sd%sn 
-        let value = sd*sd
-        let remainder = sn-value
-        console.log(sd, sn, sd%sn, wholeN, remainder, value)
-        console.log(`${wholeN} ${remainder}/${sd}`)
+        console.log(`${sn} is bigger then ${sd}`) 
+        solution.num = sn - sd
+        wholeN = wholeN + 1
+         return wholeNum()
+        }
 
-    } else {
-        console.log(`${sn}/${sd}`)
-    }
+    return console.log(`the answer is ${wholeN} ${sn}/${sd}`)
 }
 
 export default getAddition
