@@ -125,14 +125,14 @@ const wholeNum = () => {
         console.log(`${sn} is bigger then ${sd}`) 
         solution.num = sn - sd
         wholeN = wholeN + 1
-        console.log(`the answer is ${wholeN} ${sn}/${sd}`)
+        wholeNum()
         }
         else {
-        console.log(`the answer is ${sn}/${sd}`)
+        console.log(`the answer is ${wholeN} ${sn}/${sd}`)
         }
 }
 
 export default getAddition
 
 // 1/3 1/3 = 2/3 
-// 1/2 3/4 = 4/8 6/8 = 10/8
+// 1/2 3/4 = 4/8 6/8 after normalizing denominator = 10/8 after adding together = 1 1/4

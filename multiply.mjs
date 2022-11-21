@@ -17,6 +17,8 @@ let solution = {
     demo: 0
 }
 
+let wholeN = 0
+
 // collects a users inputs 
 
 const getNumbers = () => {
@@ -110,10 +112,10 @@ const wholeNum = () => {
         console.log(`${sn} is bigger then ${sd}`) 
         solution.num = sn - sd
         wholeN = wholeN + 1
-        console.log(`the answer is ${wholeN} ${sn}/${sd}`)
+        wholeNum()
         }
         else {
-        console.log(`the answer is ${sn}/${sd}`)
+        console.log(`the answer is ${wholeN} ${sn}/${sd}`)
         }
 }
 
