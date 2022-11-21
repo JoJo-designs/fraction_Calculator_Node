@@ -106,8 +106,6 @@ const simple = (N,D) => {
 // takes lowest common denominators and sets them as a solution
 const answer = (N) => 
 {console.log(N)
-    let sn
-    let sd
     if (N === 1) {
         console.log(`Fraction cannot be reduced ${solution.num}/${solution.demo}`) 
     } else {
@@ -127,10 +125,11 @@ const wholeNum = () => {
         console.log(`${sn} is bigger then ${sd}`) 
         solution.num = sn - sd
         wholeN = wholeN + 1
-         return wholeNum()
+        console.log(`the answer is ${wholeN} ${sn}/${sd}`)
         }
-
-    return console.log(`the answer is ${wholeN} ${sn}/${sd}`)
+        else {
+        console.log(`the answer is ${sn}/${sd}`)
+        }
 }
 
 export default getAddition

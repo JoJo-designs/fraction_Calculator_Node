@@ -14,7 +14,6 @@ const wholeNum = () => {
     wholeNum()
    }
    console.log(`the answer is ${wholeN} ${sn}/${sd}`)
-   return
 }  
 
 

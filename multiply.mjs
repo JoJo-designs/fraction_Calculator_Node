@@ -74,43 +74,55 @@ const simple = (N,D) => {
 };
 
 //Use lowers common denominator to simplify the fraction
+// const answer = (N) => 
+// {console.log(N)
+//     let sn
+//     let sd
+//     if (N === 1) {
+//         console.log(`Fraction cannot be reduced ${solution.num}/${solution.demo}`) 
+//         sn = solution.num
+//         sd = solution.demo
+//     } else {
+//         sn =  solution.num / N
+//         sd =  solution.demo / N
+//         console.log(`${sn}/${sd}`)
+//     }
+//     wholeNum(sn, sd)
+// }
+
 const answer = (N) => 
 {console.log(N)
-    let sn
-    let sd
     if (N === 1) {
         console.log(`Fraction cannot be reduced ${solution.num}/${solution.demo}`) 
-        sn = solution.num
-        sd = solution.demo
     } else {
-        sn =  solution.num / N
-        sd =  solution.demo / N
-        console.log(`${sn}/${sd}`)
+        solution.num =  solution.num / N
+        solution.demo =  solution.demo / N
     }
-    wholeNum(sn, sd)
+    wholeNum()
 }
 
-//if Numerator is bigger then the denominator simplify to a whole number
-const wholeNum = (sn, sd) => {
+// if Numerator is bigger then the denominator simplify to a whole number
+const wholeNum = () => {
+    console.log(solution.num, solution.demo)
+    let sn = solution.num
+    let sd = solution.demo
     if (sn > sd) {
-        console.log(`${sn} is bigger then ${sd}`)
-        let wholeN = sd%sn
-        let value = sd*sd
-        let remainder = sn-value
-        console.log(`${wholeN} ${remainder}/${sd}`)
-
-    } else {
-        console.log(`${sn}/${sd}`)
-        decimal(sn, sd)
-    }
+        console.log(`${sn} is bigger then ${sd}`) 
+        solution.num = sn - sd
+        wholeN = wholeN + 1
+        console.log(`the answer is ${wholeN} ${sn}/${sd}`)
+        }
+        else {
+        console.log(`the answer is ${sn}/${sd}`)
+        }
 }
 
-// get the decimal equivalent of the fractions if it is not a whole number.
-const decimal = (sn, sd) => {
-    console.log(`this is the fraction ${sn}/${sd}`)
-    const newValue = sn / sd 
-    console.log(newValue)
-}
+// // get the decimal equivalent of the fractions if it is not a whole number.
+// const decimal = (sn, sd) => {
+//     console.log(`this is the fraction ${sn}/${sd}`)
+//     const newValue = sn / sd 
+//     console.log(newValue)
+// }
 
 
 
