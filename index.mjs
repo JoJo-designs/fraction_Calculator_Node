@@ -1,6 +1,7 @@
 import inquirer from 'inquirer';
 import getNumbers from './multiply.mjs'
 import getAddition from './addition.mjs'
+import getDivision from './division.mjs';
 
 const menu = () => {
     inquirer
@@ -11,7 +12,8 @@ const menu = () => {
             message: 'Select actions',
             choices: [
                 "Multiply",
-                "Addition"
+                "Addition",
+                "Division"
             ]
         }
     ])
@@ -19,9 +21,12 @@ const menu = () => {
         if(select.selection === "Multiply") {
             console.log('working')
             getNumbers()
-        } else {
+        } else if (select.selection === "Addition") {
             console.log('working')
             getAddition()
+        } else {
+            console.log('working')
+            getDivision()
         }
     })
 }
